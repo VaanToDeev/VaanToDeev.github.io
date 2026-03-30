@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NATURALLE | Sobre Nós</title>
+
+    <meta name="description" content="Conheça a Naturalle Saúde Completa. Há 7 anos transformando ciência em saúde e bem-estar com suplementos naturais de alta performance.">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;400;500;700;800;900&family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+
+    <!-- Material Symbols -->
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="index.css">
+    <style>
+        /* ====================================================================
+           SOBRE PAGE — SCOPED STYLES
+           ==================================================================== */
+
+        /* --- Hero --- */
+        .sobre-hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 8rem 2rem 6rem;
+            position: relative;
+            overflow: hidden;
+        }
+        .sobre-hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(ellipse at 50% 80%, rgba(0,201,167,0.08) 0%, transparent 60%);
+            pointer-events: none;
+        }
+        .sobre-hero .label {
+            opacity: 0; transform: translateY(20px);
+            animation: fadeUp 0.8s ease-out 0.3s forwards;
+        }
+        .sobre-hero .sobre-headline {
+            font-family: var(--font-headline);
+            font-weight: 800;
+            font-size: clamp(2.5rem, 6vw, 5rem);
+            letter-spacing: -0.03em;
+            line-height: 1.1;
+            max-width: 800px;
+            margin: 1.5rem 0;
+            opacity: 0; transform: translateY(30px);
+            animation: fadeUp 0.8s ease-out 0.5s forwards;
+        }
+        .sobre-hero .sobre-subtitle {
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            font-size: clamp(1.1rem, 2vw, 1.5rem);
+            color: var(--color-on-surface-variant);
+            max-width: 550px;
+            opacity: 0; transform: translateY(30px);
+            animation: fadeUp 0.8s ease-out 0.7s forwards;
+        }
+        .sobre-hero .scroll-hint {
+            position: absolute;
+            bottom: 3rem;
+            display: flex; flex-direction: column; align-items: center; gap: 0.5rem;
+            color: var(--color-on-surface-variant);
+            font-family: var(--font-label);
+            font-size: 0.65rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            opacity: 0; animation: fadeUp 0.8s ease-out 1s forwards;
+        }
+        .scroll-hint .material-symbols-outlined {
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes fadeUp {
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(8px); }
+        }
+
+        /* --- Reveal on Scroll --- */
+        .reveal-section {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+        .reveal-section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* --- Story Section --- */
+        .sobre-story {
+            padding: 8rem 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        .story-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+        @media (min-width: 900px) {
+            .story-grid { grid-template-columns: 1fr 1fr; gap: 6rem; }
+        }
+        .story-number {
+            font-family: var(--font-headline);
+            font-weight: 800;
+            font-size: clamp(5rem, 12vw, 10rem);
+            line-height: 1;
+            color: var(--color-accent);
+            opacity: 0.15;
+            margin-bottom: -1rem;
+        }
+        .story-label {
+            font-family: var(--font-label);
+            font-size: 0.65rem;
+            letter-spacing: 0.3em;
+            text-transform: uppercase;
+            color: var(--color-accent);
+            margin-bottom: 1.5rem;
+            display: block;
+        }
+        .story-title {
+            font-family: var(--font-headline);
+            font-weight: 700;
+            font-size: clamp(1.8rem, 3vw, 2.8rem);
+            letter-spacing: -0.02em;
+            line-height: 1.15;
+            margin-bottom: 1.5rem;
+        }
+        .story-text {
+            font-family: var(--font-body);
+            font-size: 1rem;
+            line-height: 1.8;
+            color: var(--color-on-surface-variant);
+            max-width: 500px;
+        }
+        .story-visual {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .story-visual .stat-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+        }
+        .stat-card {
+            background: var(--color-surface-container);
+            border: 1px solid var(--color-outline-variant);
+            border-radius: 16px;
+            padding: 2rem 1.5rem;
+            text-align: center;
+            transition: border-color var(--transition-fast), transform var(--transition-fast);
+        }
+        .stat-card:hover {
+            border-color: var(--color-accent);
+            transform: translateY(-4px);
+        }
+        .stat-value {
+            font-family: var(--font-headline);
+            font-weight: 800;
+            font-size: 2.5rem;
+            color: var(--color-accent);
+            line-height: 1;
+            margin-bottom: 0.5rem;
+        }
+        .stat-label {
+            font-family: var(--font-label);
+            font-size: 0.7rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--color-on-surface-variant);
+        }
+
+        /* --- Founder Section --- */
+        .sobre-founder {
+            padding: 8rem 2rem;
+            background: var(--color-surface-container-low);
+        }
+        .founder-inner {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        .founder-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+        @media (min-width: 900px) {
+            .founder-grid { grid-template-columns: 1fr 1.2fr; gap: 6rem; }
+        }
+        .founder-icon-area {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .founder-icon-circle {
+            width: 220px; height: 220px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--color-accent), rgba(0,201,167,0.3));
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .founder-icon-circle .material-symbols-outlined {
+            font-size: 5rem;
+            color: var(--color-on-primary);
+        }
+        .founder-quote {
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            font-size: clamp(1.2rem, 2.5vw, 1.7rem);
+            line-height: 1.6;
+            color: var(--color-on-surface);
+            border-left: 3px solid var(--color-accent);
+            padding-left: 1.5rem;
+            margin-bottom: 2rem;
+        }
+        .founder-name {
+            font-family: var(--font-headline);
+            font-weight: 700;
+            font-size: 1.1rem;
+            margin-bottom: 0.25rem;
+        }
+        .founder-role {
+            font-family: var(--font-label);
+            font-size: 0.7rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--color-accent);
+        }
+
+        /* --- Philosophy Section --- */
+        .sobre-philosophy {
+            padding: 8rem 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        .philosophy-pillars {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+            margin-top: 4rem;
+        }
+        @media (min-width: 768px) {
+            .philosophy-pillars { grid-template-columns: repeat(3, 1fr); }
+        }
+        .pillar-card {
+            background: var(--color-surface-container);
+            border: 1px solid var(--color-outline-variant);
+            border-radius: 20px;
+            padding: 3rem 2rem;
+            transition: border-color var(--transition-fast), transform var(--transition-fast);
+        }
+        .pillar-card:hover {
+            border-color: var(--color-accent);
+            transform: translateY(-6px);
+        }
+        .pillar-icon {
+            font-size: 2.5rem;
+            color: var(--color-accent);
+            margin-bottom: 1.5rem;
+        }
+        .pillar-title {
+            font-family: var(--font-headline);
+            font-weight: 700;
+            font-size: 1.2rem;
+            margin-bottom: 0.75rem;
+        }
+        .pillar-desc {
+            font-family: var(--font-body);
+            font-size: 0.9rem;
+            line-height: 1.7;
+            color: var(--color-on-surface-variant);
+        }
+
+        /* --- Products Section --- */
+        .sobre-products {
+            padding: 6rem 2rem 8rem;
+            background: var(--color-surface-container-low);
+        }
+        .products-inner {
+            max-width: 1400px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        .product-pillars {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+            margin-top: 3rem;
+        }
+        @media (min-width: 768px) {
+            .product-pillars { grid-template-columns: repeat(4, 1fr); }
+        }
+        .product-pillar {
+            background: var(--color-surface-container);
+            border: 1px solid var(--color-outline-variant);
+            border-radius: 16px;
+            padding: 2rem 1rem;
+            text-align: center;
+            transition: border-color var(--transition-fast), transform var(--transition-fast);
+            text-decoration: none;
+            color: inherit;
+        }
+        .product-pillar:hover {
+            border-color: var(--color-accent);
+            transform: translateY(-4px);
+        }
+        .product-pillar-icon {
+            font-size: 2rem;
+            margin-bottom: 0.75rem;
+        }
+        .product-pillar-name {
+            font-family: var(--font-headline);
+            font-weight: 700;
+            font-size: 0.85rem;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            margin-bottom: 0.35rem;
+        }
+        .product-pillar-cat {
+            font-family: var(--font-label);
+            font-size: 0.65rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--color-accent);
+        }
+
+        /* --- CTA Section --- */
+        .sobre-cta {
+            padding: 8rem 2rem;
+            text-align: center;
+        }
+        .cta-button {
+            display: inline-block;
+            margin-top: 2rem;
+            padding: 1rem 3rem;
+            font-family: var(--font-label);
+            font-size: 0.75rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--color-on-primary);
+            background: var(--color-accent);
+            border: none;
+            border-radius: 50px;
+            text-decoration: none;
+            transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+            cursor: pointer;
+        }
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(0,201,167,0.3);
+        }
+    </style>
+</head>
+<body id="page-body">
+    <!-- TopAppBar -->
+    <header class="navbar" id="main-nav">
+        <nav class="nav-container">
+            <div class="nav-left">
+                <a class="logo" href="index.html">NATURALLE</a>
+                <div class="nav-links">
+                    <a class="nav-link active" href="sobre.html">Sobre</a>
+                    <a class="nav-link" href="index.html#contato">Contato</a>
+                </div>
+            </div>
+            <div class="nav-actions">
+                <a href="index.html" class="icon-button" aria-label="Voltar">
+                    <span class="material-symbols-outlined">arrow_back</span>
+                </a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- HERO -->
+        <section class="sobre-hero">
+            <span class="label">Sobre · Naturalle</span>
+            <h1 class="sobre-headline">TRANSFORMANDO<br>CIÊNCIA EM <span class="accent">SAÚDE</span></h1>
+            <p class="sobre-subtitle">"Há mais de 7 anos unindo a força da natureza com a precisão da ciência para promover qualidade de vida."</p>
+            <div class="scroll-hint">
+                <span>Descubra nossa história</span>
+                <span class="material-symbols-outlined">expand_more</span>
+            </div>
+        </section>
+
+        <!-- STORY -->
+        <section class="sobre-story reveal-section">
+            <div class="story-grid">
+                <div class="story-content">
+                    <span class="story-number">7+</span>
+                    <span class="story-label">Nossa Trajetória</span>
+                    <h2 class="story-title">UMA HISTÓRIA DE DEDICAÇÃO À SAÚDE</h2>
+                    <p class="story-text">
+                        A <strong>Naturalle Saúde Completa</strong> nasceu da paixão por transformar o conhecimento farmacêutico em soluções acessíveis e eficazes. Há mais de 7 anos, atuamos no mercado de suplementos naturais com uma missão clara: promover qualidade de vida através de fórmulas inovadoras que unem o melhor da ciência e da natureza.
+                    </p>
+                    <p class="story-text" style="margin-top: 1rem;">
+                        Cada produto é resultado de pesquisa criteriosa, seleção rigorosa de ativos e um compromisso inabalável com a segurança e eficácia.
+                    </p>
+                </div>
+                <div class="story-visual">
+                    <div class="stat-grid">
+                        <div class="stat-card">
+                            <div class="stat-value">7+</div>
+                            <div class="stat-label">Anos no mercado</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-value">11+</div>
+                            <div class="stat-label">Anos de experiência</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-value">7</div>
+                            <div class="stat-label">Produtos na linha</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-value">100+</div>
+                            <div class="stat-label">Ativos combinados</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FOUNDER -->
+        <section class="sobre-founder reveal-section">
+            <div class="founder-inner">
+                <div class="founder-grid">
+                    <div class="founder-icon-area">
+                        <div class="founder-icon-circle">
+                            <span class="material-symbols-outlined">science</span>
+                        </div>
+                    </div>
+                    <div class="founder-content">
+                        <span class="story-label">O Fundador</span>
+                        <blockquote class="founder-quote">
+                            "Nosso objetivo não é apenas tratar, mas educar e promover o bem-estar duradouro. Cada fórmula é pensada para que nossos clientes sintam a diferença real na qualidade de vida."
+                        </blockquote>
+                        <p class="founder-name">Jaire Anderson</p>
+                        <span class="founder-role">Farmacêutico · Fundador da Naturalle</span>
+                        <p class="story-text" style="margin-top: 1.5rem;">
+                            Com mais de <strong>11 anos de experiência</strong> em manipulação farmacêutica, drogarias, hospitais e palestras na área de saúde, Jaire Anderson fundou a Naturalle com a visão de democratizar o acesso a suplementos de alta performance, seguros e cientificamente formulados.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PHILOSOPHY -->
+        <section class="sobre-philosophy reveal-section">
+            <span class="story-label" style="display: block; text-align: center;">Nossos Pilares</span>
+            <h2 class="story-title" style="text-align: center;">O QUE NOS MOVE</h2>
+            <div class="philosophy-pillars">
+                <div class="pillar-card">
+                    <span class="material-symbols-outlined pillar-icon">biotech</span>
+                    <h3 class="pillar-title">Ciência</h3>
+                    <p class="pillar-desc">Fórmulas desenvolvidas com base em evidências científicas e padrões farmacêuticos rigorosos.</p>
+                </div>
+                <div class="pillar-card">
+                    <span class="material-symbols-outlined pillar-icon">eco</span>
+                    <h3 class="pillar-title">Natureza</h3>
+                    <p class="pillar-desc">Ingredientes naturais e ativos selecionados para máxima biodisponibilidade e resultados reais.</p>
+                </div>
+                <div class="pillar-card">
+                    <span class="material-symbols-outlined pillar-icon">favorite</span>
+                    <h3 class="pillar-title">Bem-Estar</h3>
+                    <p class="pillar-desc">Nosso compromisso é com a saúde completa: mente, corpo e espírito em equilíbrio.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- PRODUCT CATEGORIES -->
+        <section class="sobre-products reveal-section">
+            <div class="products-inner">
+                <span class="story-label">Linhas de Produto</span>
+                <h2 class="story-title">SOLUÇÕES PARA CADA NECESSIDADE</h2>
+                <div class="product-pillars">
+                    <a href="produto.html?p=NATUBEAUTY" class="product-pillar">
+                        <div class="product-pillar-icon">✨</div>
+                        <div class="product-pillar-name">NatuBeauty</div>
+                        <div class="product-pillar-cat">Estética</div>
+                    </a>
+                    <a href="produto.html?p=NATUFOCO" class="product-pillar">
+                        <div class="product-pillar-icon">🧠</div>
+                        <div class="product-pillar-name">NatuFoco</div>
+                        <div class="product-pillar-cat">Performance</div>
+                    </a>
+                    <a href="produto.html?p=NATUSLEEP" class="product-pillar">
+                        <div class="product-pillar-icon">🌙</div>
+                        <div class="product-pillar-name">NatuSleep</div>
+                        <div class="product-pillar-cat">Descanso</div>
+                    </a>
+                    <a href="produto.html?p=MAGNATU" class="product-pillar">
+                        <div class="product-pillar-icon">💎</div>
+                        <div class="product-pillar-name">MagNatu</div>
+                        <div class="product-pillar-cat">Magnésio</div>
+                    </a>
+                    <a href="produto.html?p=NATUCOMPLEX" class="product-pillar">
+                        <div class="product-pillar-icon">⚡</div>
+                        <div class="product-pillar-name">NatuComplex</div>
+                        <div class="product-pillar-cat">Multivitamínico</div>
+                    </a>
+                    <a href="produto.html?p=NATUFLEX" class="product-pillar">
+                        <div class="product-pillar-icon">💪</div>
+                        <div class="product-pillar-name">NatuFlex</div>
+                        <div class="product-pillar-cat">Articulações</div>
+                    </a>
+                    <a href="produto.html?p=NATUPESO" class="product-pillar">
+                        <div class="product-pillar-icon">🍃</div>
+                        <div class="product-pillar-name">NatuPeso</div>
+                        <div class="product-pillar-cat">Emagrecimento</div>
+                    </a>
+                    <a href="index.html" class="product-pillar">
+                        <div class="product-pillar-icon">🔬</div>
+                        <div class="product-pillar-name">Ver Todos</div>
+                        <div class="product-pillar-cat">Catálogo completo</div>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA -->
+        <section class="sobre-cta reveal-section">
+            <span class="story-label" style="display: block; text-align: center;">Pronto para começar?</span>
+            <h2 class="story-title">DESCUBRA O MELHOR DA NATUREZA</h2>
+            <a href="index.html" class="cta-button">Explorar Produtos</a>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-logo">NATURALLE</div>
+            <div class="footer-links">
+                <a href="index.html">Início</a>
+                <a href="sobre.html">Sobre</a>
+                <a href="index.html#contato">Contato</a>
+            </div>
+            <div class="footer-copyright">
+                © 2026 NATURALLE. TODOS OS DIREITOS RESERVADOS.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Reveal on scroll
+        const revealSections = document.querySelectorAll('.reveal-section');
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    revealObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.15 });
+        revealSections.forEach(s => revealObserver.observe(s));
+    </script>
+</body>
+</html>

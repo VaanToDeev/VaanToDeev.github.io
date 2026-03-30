@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NATURALLE | Produto</title>
+
+    <meta name="description" content="Conheça os detalhes completos deste suplemento Naturalle.">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;400;500;700;800;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <!-- Material Symbols -->
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="produto.css">
+</head>
+<body id="page-body">
+    <!-- TopAppBar -->
+    <header class="navbar" id="main-nav">
+        <nav class="nav-container">
+            <div class="nav-left">
+                <a class="logo" href="index.html">NATURALLE</a>
+                <div class="nav-links">
+                    <a class="nav-link" href="sobre.html">Sobre</a>
+                    <a class="nav-link" href="index.html#contato">Contato</a>
+                </div>
+            </div>
+            <div class="nav-actions">
+                <button class="icon-button" id="search-toggle" aria-label="Pesquisar">
+                    <span class="material-symbols-outlined">search</span>
+                </button>
+                <a href="index.html" class="icon-button" aria-label="Voltar">
+                    <span class="material-symbols-outlined">arrow_back</span>
+                </a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Search Overlay -->
+    <div class="search-overlay hidden" id="search-overlay">
+        <div class="search-container">
+            <div class="search-input-group">
+                <span class="material-symbols-outlined search-icon">search</span>
+                <input type="text" class="search-input" id="search-input" placeholder="Pesquisar produtos..." autocomplete="off">
+                <button class="search-close" id="search-close" aria-label="Fechar pesquisa">
+                    <span class="material-symbols-outlined">close</span>
+                </button>
+            </div>
+            <div class="search-results" id="search-results"></div>
+        </div>
+    </div>
+
+    <main>
+        <!-- Product Hero -->
+        <section class="product-hero">
+            <div class="product-hero-grid">
+                <div class="product-hero-image" id="product-hero-image">
+                    <img src="" alt="" id="product-main-img" class="product-main-img">
+                </div>
+                <div class="product-hero-info">
+                    <span class="label" id="product-collection-label"></span>
+                    <h1 class="product-page-title" id="product-page-title"></h1>
+                    <p class="product-page-subtitle" id="product-page-subtitle"></p>
+                    <p class="body-text" id="product-page-desc"></p>
+                    <div class="product-hero-cta">
+                        <a href="#beneficios" class="cta-pill">Ver Benefícios</a>
+                        <a href="#nutricional" class="cta-pill cta-pill-outline">Tabela Nutricional</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Quick Stats -->
+        <section class="stats-section">
+            <div class="stats-grid" id="stats-grid">
+                <!-- Populated by JS -->
+            </div>
+        </section>
+
+        <!-- Benefits Section -->
+        <section class="benefits-section" id="beneficios">
+            <div class="benefits-container">
+                <div class="section-header">
+                    <span class="label">Ciência & Natureza</span>
+                    <h2 class="section-heading">Benefícios dos <span class="accent">Ingredientes</span></h2>
+                </div>
+                <div class="benefits-grid" id="benefits-grid">
+                    <!-- Populated by JS -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Nutritional Table Section -->
+        <section class="nutrition-section" id="nutricional">
+            <div class="nutrition-container">
+                <div class="section-header">
+                    <span class="label">Composição</span>
+                    <h2 class="section-heading">Tabela <span class="accent">Nutricional</span></h2>
+                </div>
+                <div class="nutrition-card">
+                    <div class="nutrition-card-header">
+                        <span class="nutrition-badge" id="nutrition-badge"></span>
+                        <p class="nutrition-serving">Porção: 2 cápsulas</p>
+                    </div>
+                    <table class="nutrition-full-table" id="nutrition-full-table">
+                        <thead>
+                            <tr>
+                                <th>Componente</th>
+                                <th>Quantidade por porção</th>
+                            </tr>
+                        </thead>
+                        <tbody id="nutrition-tbody">
+                            <!-- Populated by JS -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- Back CTA -->
+        <section class="back-cta-section">
+            <div class="back-cta-container">
+                <span class="label">Linha Completa</span>
+                <h2 class="section-heading">Conheça nossos <span class="accent">outros produtos</span></h2>
+                <div class="other-products-grid" id="other-products-grid">
+                    <!-- Populated by JS -->
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-logo">NATURALLE</div>
+            <div class="footer-links">
+                <a href="#">Política de Privacidade</a>
+                <a href="#">Termos de Uso</a>
+                <a href="#">Blog</a>
+                <a href="#">Contato</a>
+            </div>
+            <div class="footer-copyright">
+                © 2026 NATURALLE. TODOS OS DIREITOS RESERVADOS.
+            </div>
+        </div>
+    </footer>
+
+    <script src="produto.js"></script>
+</body>
+</html>

@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NATURALLE | Suplementos Naturais Premium</title>
+    
+    <!-- SEO Optimization -->
+    <meta name="description" content="Descubra a linha completa de suplementos naturais Naturalle. Fórmulas avançadas para beleza, foco, sono, articulações e bem-estar.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;400;500;700;800&family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    
+    <!-- Material Symbols -->
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="index.css">
+</head>
+<body id="page-body">
+    <!-- TopAppBar -->
+    <header class="navbar" id="main-nav">
+        <nav class="nav-container">
+            <div class="nav-left">
+                <a class="logo" href="index.html">NATURALLE</a>
+                <div class="nav-links">
+                    <a class="nav-link" href="sobre.html">Sobre</a>
+                    <a class="nav-link" href="#contato">Contato</a>
+                </div>
+            </div>
+            <div class="nav-actions">
+                <button class="icon-button" id="search-toggle" aria-label="Pesquisar">
+                    <span class="material-symbols-outlined">search</span>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Search Overlay -->
+    <div class="search-overlay hidden" id="search-overlay">
+        <div class="search-container">
+            <div class="search-input-group">
+                <span class="material-symbols-outlined search-icon">search</span>
+                <input type="text" class="search-input" id="search-input" placeholder="Pesquisar produtos..." autocomplete="off">
+                <button class="search-close" id="search-close" aria-label="Fechar pesquisa">
+                    <span class="material-symbols-outlined">close</span>
+                </button>
+            </div>
+            <div class="search-results" id="search-results"></div>
+        </div>
+    </div>
+
+    <main>
+        <!-- Hero Showcase Section -->
+        <section class="hero-section">
+            <div class="hero-tagline">
+                <span class="label">Naturalle · Saúde Completa</span>
+                <h2 class="tagline-text">Conheça nossa <span class="accent">linha completa</span></h2>
+            </div>
+            <div class="hero-layout">
+                <div class="hero-display-area">
+                    <button class="nav-arrow left" aria-label="Previous" id="carousel-prev">
+                        <span class="material-symbols-outlined">west</span>
+                    </button>
+                    
+                    <div class="carousel-wrapper" id="carousel-wrapper">
+                        <!-- Carousel Items -->
+                        <div class="carousel-item active" data-index="0" data-title="NATUBEAUTY" data-subtitle="Estética e Cuidado" data-desc="Natubeauty é um suplemento completo desenvolvido para fortalecer cabelos, pele e unhas de dentro para fora. Sua fórmula reúne 24 ativos essenciais que atuam na redução da queda capilar, prevenção do envelhecimento da pele e fortalecimento das unhas." data-label="Collection 01 / Beauty">
+                            <img src="Mockups/Natubeauty/APRESENTAÇÃO NATUBEAUTY 2.png" alt="Natubeauty" class="carousel-image" loading="lazy">
+                            <div class="image-overlay">
+                                <h3 class="overlay-title">NATUBEAUTY</h3>
+                                <button class="overlay-button">Ver Detalhes</button>
+                            </div>
+                        </div>
+                        <div class="carousel-item next-1" data-index="1" data-title="NATUCOMPLEX" data-subtitle="Nutrição Essencial" data-desc="NatuComplex é um multivitamínico e multimineral completo, com 28 ativos essenciais que promovem equilíbrio, energia e bem-estar. Contém Vitamina D, B12, Cálcio e Magnésio." data-label="Collection 02 / Health">
+                            <img src="Mockups/Natucomplex/MOKCUP C. FUNDO 1.png" alt="Natucomplex" class="carousel-image" loading="lazy">
+                            <div class="image-overlay">
+                                <h3 class="overlay-title">NATUCOMPLEX</h3>
+                                <button class="overlay-button">Ver Detalhes</button>
+                            </div>
+                        </div>
+                        <div class="carousel-item next-2" data-index="2" data-title="NATUFLEX" data-subtitle="Mobilidade e Articulações" data-desc="Natuflex é um suplemento em cápsulas com 11 ativos selecionados para a saúde dos ossos, músculos e articulações. Proporciona mobilidade, força e conforto articular no dia a dia." data-label="Collection 03 / Wellness">
+                            <img src="Mockups/Natuflex/MOKCUP APRESENTAÇÃO NATUFLEX 2.png" alt="Natuflex" class="carousel-image" loading="lazy">
+                            <div class="image-overlay">
+                                <h3 class="overlay-title">NATUFLEX</h3>
+                                <button class="overlay-button">Ver Detalhes</button>
+                            </div>
+                        </div>
+                        <div class="carousel-item next-3" data-index="3" data-title="NATUFOCO" data-subtitle="Concentração Máxima" data-desc="Natofoco é um suplemento para memória, foco e clareza mental no dia a dia. Conta com 200mg de Coenzima Q10 por dose, associado a Magnésio Treonato, Vitaminas D, B12 e Triptofano para energia limpa." data-label="Collection 04 / Focus">
+                            <img src="Mockups/Natufoco/MOKCUP C. FUNDO 1.png" alt="Natufoco" class="carousel-image" loading="lazy">
+                            <div class="image-overlay">
+                                <h3 class="overlay-title">NATUFOCO</h3>
+                                <button class="overlay-button">Ver Detalhes</button>
+                            </div>
+                        </div>
+                        <div class="carousel-item next-4" data-index="4" data-title="NATUPESO" data-subtitle="Controle e Leveza" data-desc="Natupeso é um suplemento natural para emagrecimento saudável, formulado com doze ativos que atuam juntos para aumentar a saciedade, melhorar o metabolismo e reduzir a compulsão por doces." data-label="Collection 05 / Active">
+                            <img src="Mockups/Natupeso/MOKCUP C.FUNDO  (1).png" alt="Natupeso" class="carousel-image" loading="lazy">
+                            <div class="image-overlay">
+                                <h3 class="overlay-title">NATUPESO</h3>
+                                <button class="overlay-button">Ver Detalhes</button>
+                            </div>
+                        </div>
+                        <div class="carousel-item next-5" data-index="5" data-title="NATUSLEEP" data-subtitle="Descanso Profundo" data-desc="NatuSleep promove noites de sono restauradoras. Sua fórmula combina L-triptofano, magnésio treonato, L-teanina, inositol e melatonina para atuar no controle da ansiedade e regulação natural do sono." data-label="Collection 06 / Recovery">
+                            <img src="Mockups/Natusleep/MOKCUP C. FUNDO 1.png" alt="Natusleep" class="carousel-image" loading="lazy">
+                            <div class="image-overlay">
+                                <h3 class="overlay-title">NATUSLEEP</h3>
+                                <button class="overlay-button">Ver Detalhes</button>
+                            </div>
+                        </div>
+                        <div class="carousel-item prev-1" data-index="6" data-title="MAGNATU" data-subtitle="Magnésio Puro" data-desc="Magnatu combina 4 tipos de magnésio e vitaminas essenciais. Sua fórmula avançada apoia a saúde muscular, cerebral e óssea, além de contribuir para a disposição, clareza mental e bem-estar geral." data-label="Collection 07 / Core">
+                            <img src="Mockups/magNatu/APRESENTAÇÃO MAGNATU 1.png" alt="magNatu" class="carousel-image" loading="lazy">
+                            <div class="image-overlay">
+                                <h3 class="overlay-title">MAGNATU</h3>
+                                <button class="overlay-button">Ver Detalhes</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button class="nav-arrow right" aria-label="Next" id="carousel-next">
+                        <span class="material-symbols-outlined">east</span>
+                    </button>
+                </div>
+
+                <div class="hero-info" id="hero-info-container">
+                    <div class="hero-title-group">
+                        <span class="label" id="display-label">Collection 01 / Beauty</span>
+                        <h1 class="headline" id="display-title">NATUBEAUTY</h1>
+                    </div>
+                    <div class="hero-details-group">
+                        <p class="body-text" id="display-desc">
+                            Natubeauty é um suplemento completo desenvolvido para fortalecer cabelos, pele e unhas de dentro para fora. Sua fórmula reúne 24 ativos essenciais que atuam na redução da queda capilar, prevenção do envelhecimento da pele e fortalecimento das unhas.
+                        </p>
+                        <div class="price-action">
+                            <button class="text-button" id="display-action">Ver Produto</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Asymmetric Grid Section -->
+        <section class="grid-section">
+            <div class="grid-container">
+                <!-- Left Offset -->
+                <div class="grid-col-left">
+                    <div class="image-container portrait-img">
+                        <img 
+                            src="Mockups/Natusleep/MOKCUP C. FUNDO 1.png" 
+                            alt="NatuSleep — Descanso Profundo"
+                            class="zoom-image"
+                            loading="lazy"
+                        >
+                    </div>
+                    <div class="text-block">
+                        <h3 class="subtitle">Descanso Restaurador</h3>
+                        <p class="body-text-small">NatuSleep combina L-triptofano, magnésio treonato e melatonina para promover noites de sono profundo e restaurador.</p>
+                    </div>
+                </div>
+
+                <!-- Right Offset -->
+                <div class="grid-col-right">
+                    <div class="philosophy-header">
+                        <span class="label text-right">Filosofia Naturalle</span>
+                        <h2 class="massive-headline">SAÚDE NATURAL. RESULTADOS REAIS.</h2>
+                    </div>
+
+                    <div class="product-cards">
+                        <div class="product-card parallax-card" data-speed="-0.1">
+                            <a href="produto.html?p=NATUFOCO" class="image-container square-img shadow-box block-link">
+                                <img 
+                                    src="Mockups/Natufoco/MOKCUP C. FUNDO 1.png" 
+                                    alt="NatuFoco — Concentração Máxima"
+                                    class="zoom-image"
+                                    loading="lazy"
+                                >
+                            </a>
+                            <div class="product-info-column">
+                                <h4 class="product-title">NATUFOCO</h4>
+                                <p class="body-text-small">Suplemento para memória, foco e clareza mental no dia a dia, com 200mg de Coenzima Q10 por dose.</p>
+                            </div>
+                        </div>
+
+                        <div class="product-card offset-card parallax-card" data-speed="-0.25">
+                            <a href="produto.html?p=MAGNATU" class="image-container square-img shadow-box block-link">
+                                <img 
+                                    src="Mockups/magNatu/APRESENTAÇÃO MAGNATU 1.png" 
+                                    alt="MagNatu — Magnésio Puro"
+                                    class="zoom-image"
+                                    loading="lazy"
+                                >
+                            </a>
+                            <div class="product-info-column">
+                                <h4 class="product-title">MAGNATU</h4>
+                                <p class="body-text-small">A combinação perfeita de 4 tipos de magnésio puros para apoiar a saúde muscular, cerebral e óssea.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Contact Info Section -->
+        <section class="newsletter-section" id="contato">
+            <div class="newsletter-container">
+                <span class="label center-label">Contato</span>
+                <h2 class="newsletter-headline">INFORMAÇÕES DA EMPRESA</h2>
+                <div class="contact-info-links">
+                    <a href="mailto:naturalleico@gmail.com" class="contact-link">
+                        <span class="material-symbols-outlined">mail</span>
+                        <span>naturalleico@gmail.com</span>
+                    </a>
+                    <a href="https://instagram.com/naturalle.ico" target="_blank" class="contact-link">
+                        <span class="material-symbols-outlined">photo_camera</span>
+                        <span>@naturalle.ico</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Modal (Detail View) -->
+    <div class="modal hidden" id="detail-modal" aria-hidden="true" role="dialog">
+        <div class="modal-content">
+            <button class="close-modal text-button-icon" id="close-modal-btn" aria-label="Fechar">
+                <span class="material-symbols-outlined large-icon">close</span>
+            </button>
+            <div class="modal-grid">
+                <div class="modal-image-col">
+                    <img 
+                        src="Mockups/Natubeauty/APRESENTAÇÃO NATUBEAUTY 2.png" 
+                        alt="Detalhe do produto"
+                        class="full-cover-image"
+                    >
+                </div>
+                <div class="modal-info-col">
+                    <div class="modal-header">
+                        <span class="label">Detalhes do Produto</span>
+                        <h2 class="modal-title">NATUBEAUTY</h2>
+                    </div>
+                    
+                    <div class="modal-body-content">
+                        <p class="body-text" id="modal-description-text"></p>
+                        
+                        <div class="modal-dynamic-content" id="modal-dynamic-content">
+                            <!-- Benefits and Nutritional details injected here via app.js -->
+                        </div>
+                    </div>
+                    
+                    <button class="primary-action-btn">Saiba Mais</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-logo">NATURALLE</div>
+            <div class="footer-links">
+                <a href="sobre.html">Sobre</a>
+                <a href="#contato">Contato</a>
+                <a href="https://instagram.com/naturalle.ico" target="_blank">Instagram</a>
+            </div>
+            <div class="footer-copyright">
+                © 2026 NATURALLE. TODOS OS DIREITOS RESERVADOS.
+            </div>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>
